@@ -130,6 +130,49 @@ header.sticky #langues {
   background: #fff4e0;
   transition: all 0.5s;
 }
+header input {
+  display: none;
+}
+header #lab {
+  width: 30px;
+  height: 30px;
+  display: none;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+}
+header #lab .ligne {
+  width: 30px;
+  height: 4px;
+  background: #000;
+  transition: 0.3s;
+}
+header #lab .ligne::before, header #lab .ligne::after {
+  content: "";
+  width: 30px;
+  height: 4px;
+  background: #000;
+  position: absolute;
+  transition: 0.3s;
+}
+header #lab .ligne::before {
+  transform: translateY(12px);
+}
+header #lab .ligne::after {
+  transform: translateY(-12px);
+}
+header #ch:checked + #lab .ligne {
+  width: 0;
+  transition: 0.3s;
+}
+header #ch:checked + #lab .ligne::before {
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+header #ch:checked + #lab .ligne::after {
+  transform: rotate(-45deg);
+  transition: 0.3s;
+}
 
 .fonds {
   width: 100%;
@@ -444,8 +487,38 @@ footer p {
   header .gauche #langues {
     display: none;
   }
+  header #lab {
+    display: flex;
+    margin: 10px;
+  }
+  header nav {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    background: #fff4e0;
+    padding: 40px;
+    flex-direction: column;
+    transform: translateX(300px);
+    transition: all 0.5s ease-in-out;
+  }
   header nav ul {
     flex-direction: column;
+  }
+  header nav ul li {
+    width: 100%;
+  }
+  header nav ul li a {
+    width: auto;
+    text-align: left;
+    transition: 0.4s;
+    line-height: 35px;
+  }
+  header input {
+    display: none;
+  }
+  header #ch:checked + #lab + nav {
+    transform: translate(0);
+    transition: all 0.5s ease-in-out;
   }
 
   .fonds .gauche {
@@ -462,6 +535,12 @@ footer p {
   .selection {
     height: auto;
     flex-direction: column;
+  }
+  .selection .gauche {
+    width: auto;
+  }
+  .selection .gauche .contenu {
+    width: 95%;
   }
   .selection .droite {
     width: 100%;
