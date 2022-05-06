@@ -490,6 +490,7 @@ footer p {
   header #lab {
     display: flex;
     margin: 10px;
+    z-index: 100;
   }
   header nav {
     position: absolute;
