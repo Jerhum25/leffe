@@ -465,12 +465,17 @@ footer p {
   }
   .selection .gauche {
     width: 100%;
+    height: auto;
     padding: 10px 0;
     display: block;
   }
   .selection .gauche .contenu {
     width: 95%;
+    height: auto;
     margin: auto;
+  }
+  .selection .gauche .contenu p {
+    margin: 60px 0;
   }
   .selection .droite {
     width: 100%;
