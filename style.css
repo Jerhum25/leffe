@@ -1,0 +1,496 @@
+@charset "UTF-8";
+/*GLOBAL RESET*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Début du code */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  transition: all 0.5s;
+}
+header .gauche {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+header .gauche .logo {
+  width: 120px;
+  margin-right: 80px;
+  transition: all 1s;
+}
+header .gauche .logo img {
+  width: 100%;
+}
+header .gauche #langues {
+  height: fit-content;
+  width: 200px;
+  background: #fec300;
+  transition: all 0.5s;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+header .gauche #langues .langue {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+  background: #fec300;
+}
+header nav ul {
+  display: flex;
+  margin-right: 20px;
+}
+header nav ul li {
+  margin-right: 20px;
+}
+header nav ul li a {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: #fff 1px 1px 3px;
+}
+header nav ul li a:hover {
+  background: #fec300;
+}
+header.sticky {
+  background: #fff4e0;
+  transition: all 0.5s;
+}
+header.sticky .logo {
+  width: 50px;
+  transition: all 1s;
+}
+header.sticky #langues {
+  background: #fff4e0;
+  transition: all 0.5s;
+}
+
+.fonds {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+.fonds .gauche {
+  width: 50%;
+  background: #fec300;
+  display: flex;
+  align-items: flex-end;
+}
+.fonds .gauche img {
+  width: 100%;
+}
+.fonds .droit {
+  width: 50%;
+  position: relative;
+}
+.fonds .droit img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fonds .droit .decouvrez {
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+.fonds .droit .decouvrez span {
+  background: #fec300;
+  width: fit-content;
+  margin-top: 3px;
+  padding: 5px;
+}
+.fonds .droit .rnv {
+  font-size: 20px;
+  font-weight: 600;
+  background: #fec300;
+  width: fit-content;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: absolute;
+  right: 15px;
+  bottom: 25px;
+  transition: all 0.5s;
+}
+.fonds .droit .rnv:hover {
+  padding-right: 40px;
+  transition: all 0.5s;
+}
+
+.description {
+  position: relative;
+  width: 100%;
+}
+.description img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  margin-bottom: -3px;
+}
+.description .desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.description .desc p {
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: 600;
+  background: #fec300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.description .desc a {
+  font-size: 20px;
+  font-weight: 600;
+  background: #fec300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+.description .desc a:hover {
+  padding-right: 40px;
+  transition: all 0.5s;
+}
+
+.selection {
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
+.selection .gauche {
+  width: 50%;
+  background: #fec300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selection .gauche .contenu {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.selection .gauche .contenu h2 {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.selection .gauche .contenu p {
+  font-size: 20px;
+  line-height: 45px;
+  margin: 60px 0;
+  letter-spacing: 3px;
+}
+.selection .gauche .contenu p span {
+  font-weight: 600;
+}
+.selection .gauche .contenu a {
+  font-size: 20px;
+  font-weight: 600;
+  background: #fec300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  text-align: left;
+  transition: all 0.5s;
+}
+.selection .gauche .contenu a:hover {
+  padding-left: 40px;
+  transition: all 0.5s;
+}
+.selection .droite {
+  width: 50%;
+  overflow: hidden;
+}
+.selection .droite img {
+  position: relative;
+  left: -600px;
+  height: 100%;
+}
+
+.contact {
+  background: #fec300;
+}
+.contact .contenu {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+.contact .contenu h2 {
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 60px;
+  letter-spacing: 3px;
+}
+.contact .contenu p {
+  font-size: 20px;
+  margin: 60px 0;
+  letter-spacing: 3px;
+  line-height: 35px;
+  text-align: center;
+}
+.contact .contenu form {
+  overflow: hidden;
+}
+.contact .contenu form .nom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.contact .contenu form .nom input {
+  width: 45%;
+  height: 30px;
+  font-size: 18px;
+  padding-left: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+.contact .contenu form .DDN {
+  font-size: 14px;
+  margin: 40px auto 10px auto;
+}
+.contact .contenu form .dateDeNaissance {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.contact .contenu form .dateDeNaissance input {
+  width: 28%;
+  height: 30px;
+  font-size: 18px;
+  padding-left: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+.contact .contenu form .email {
+  width: 100%;
+  height: 30px;
+  font-size: 18px;
+  padding-left: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  margin-bottom: 40px;
+}
+.contact .conditions {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.contact .conditions input {
+  display: flex;
+  align-self: flex-start;
+  margin-top: 0;
+}
+.contact .conditions p {
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 0px;
+  text-align: center;
+}
+.contact .conditions p a {
+  text-decoration: underline;
+}
+.contact .envoyer {
+  display: flex;
+  justify-content: center;
+}
+.contact .envoyer button {
+  background: #000;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 50px;
+  color: #fff;
+  margin: 30px 0 20px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.contact .envoyer button:hover {
+  background: #fff;
+  color: #000;
+}
+
+footer {
+  width: 45%;
+  margin: auto;
+}
+footer .reseaux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .reseaux a {
+  margin: 30px;
+}
+footer .reseaux a i {
+  font-size: 45px;
+  color: #666;
+}
+footer .liens {
+  display: flex;
+  justify-content: center;
+}
+footer .liens .lien {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+footer .liens .lien a {
+  font-size: 18px;
+  text-align: center;
+  line-height: 25px;
+  color: #666;
+}
+footer p {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin: 30px 0;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    background: #fff4e0;
+  }
+  header .gauche .logo {
+    width: 50px;
+  }
+  header .gauche #langues {
+    display: none;
+  }
+  header nav ul {
+    flex-direction: column;
+  }
+
+  .fonds .gauche {
+    display: none;
+  }
+  .fonds .droit {
+    width: 100%;
+  }
+
+  .description .desc {
+    width: 95%;
+  }
+
+  .selection {
+    flex-direction: column;
+  }
+  .selection .gauche {
+    width: 100%;
+    padding: 10px;
+  }
+  .selection .droite {
+    width: 100%;
+  }
+  .selection .droite img {
+    left: 0;
+    top: 0;
+  }
+
+  .contact {
+    width: 100%;
+  }
+  .contact .contenu {
+    width: 95%;
+  }
+  .contact .contenu h2 {
+    font-size: 25px;
+  }
+  .contact .conditions {
+    width: 95%;
+  }
+
+  footer {
+    width: 95%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
