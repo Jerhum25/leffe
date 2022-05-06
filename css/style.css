@@ -240,6 +240,8 @@ header.sticky #langues {
 }
 .selection .gauche .contenu {
   width: 70%;
+  display: flex;
+  flex-direction: column;
   align-items: left;
 }
 .selection .gauche .contenu h2 {
@@ -464,9 +466,11 @@ footer p {
   .selection .gauche {
     width: 100%;
     padding: 10px 0;
+    display: block;
   }
   .selection .gauche .contenu {
     width: 95%;
+    margin: auto;
   }
   .selection .droite {
     width: 100%;
